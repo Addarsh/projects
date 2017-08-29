@@ -3,6 +3,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
+
+*{
+  box-sizing:border-box;
+}
+
+.row::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+
 hr { 
     display: block;
     margin-top: 0.5em;
@@ -15,19 +26,59 @@ hr {
     opacity:0.45;
 }
 
-section{
-  margin-left: 18vw;
-  margin-right: 18vw;
-}
-
 img {
     max-width: 100%;
     height: auto;
 }
 
+large-col{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+[class*="img-col"]{
+  float:left;
+  padding-left:5vw;
+}
+
+/*-----school pic stuff------------*/
+/*image sizes of school logos in order*/
+.img-col-1{width: 33.33%;}
+.img-col-2{width: 66.67%;}
+.img-col-3{width: 100%;}
+ 
+/*columns of all school pics in order*/
+.logos-col-1{width: 8.5vw}
+.logos-col-2{width: 13vw}
+.logos-col-3{width: 9vw}
+
+/*-------link logos-----------------*/
+.logos-col-4{width: 14vw}
+.logos-col-5{width: 13vw}
+.logos-col-6{width: 11vw}
+
+@media only screen and (min-width: 768px){
+    .large-col{
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    }
+  
+    .logos-col-1{width: 4.5vw}
+    .logos-col-2{width: 7vw}
+    .logos-col-3{width: 5vw}
+
+    .logos-col-4{width: 7vw}
+    .logos-col-5{width: 6vw}
+    .logos-col-6{width: 5vw}
+
+}
+
+
+
 p{
   margin-top: 3vw;
 }
+
 
 a:link{
   text-decoration:none;
@@ -40,24 +91,26 @@ a:hover{
 </style>
 <body>
 
-<section class="w3-container">
+<div class="row">
+
+<section class="w3-container large-col">
   <h1 class="wide">Addarsh Chandrasekar </h1>
   <p class="w3-wide w3-opacity-min">Hi! Welcome to my website! I did my undergrad from Indian Institute of Technology Madras and my Masters from Stanford University. I like to tinker around a lot and this page has some of the projects I have previously worked on.  Enjoy! </p>
-  <div class="w3-row" style="margin-top:4vw; margin-bottom:4vw">
-    <div class="w3-third w3-center w3-container">
-      <img src="stanford_logo.png" class="w3-round" width="50vw">
+  <div class="row">
+    <div class="img-col-1">
+      <img src="stanford_logo.png" class="w3-round logos-col-1">
     </div>
-    <div class="w3-third w3-center w3-container">
-      <img src="iitm_logo.png" class="w3-round" width="75vw">
+    <div class="img-col-1">
+      <img src="iitm_logo.png" class="w3-round logos-col-2">
     </div>
-    <div class="w3-third w3-center w3-container">
-      <img src="ubc_logo.png" class="w3-round" width="55vw">
+    <div class="img-col-1">
+      <img src="ubc_logo.png" class="w3-round logos-col-3">
     </div>
   </div>
 </section>
 
 
-<section class="w3-container w3-wide">
+<section class="w3-container w3-wide large-col">
   <h2 style="color:darklategray;">Projects</h2>
   <hr>
   <p><a href="XPark.pdf" target="_blank">XPark: A low power wireless sensor network for Automatic Parking</a></p>
@@ -70,25 +123,30 @@ a:hover{
   <p><a href="https://www.youtube.com/watch?v=8MWzxdCTs2k" target="_blank">Speech Controlled robot </a></p>
 </section>
 
-<section class="w3-container w3-wide" style="margin-bottom:5vw">
+<section class="w3-container w3-wide large-col" style="margin-bottom:5vw">
   <h2 style="color:darklategray">Links</h2>
   <hr>
-  <div class="w3-row" style="margin-top:4vw">
-    <div class="w3-third w3-container w3-center">
+  <div class="row" style="margin-top:2vw">
+    <div class="img-col-1">
       <a href="https://github.com/Addarsh" target="_blank">
-        <img src="github_logo.jpg" class="w3-round" width="80vw">
+        <img src="github_logo.jpg" class="logos-col-4">
       </a>
     </div>
-    <div class="w3-third w3-container w3-center">
+    <div class="img-col-1">
       <a href="https://www.linkedin.com/in/addarsh-chandrasekar-85479ab4/" target="_blank">
-        <img src="linkedin_logo.png" class="w3-round" width="70vw">
+        <img src="linkedin_logo.png" class="logos-col-5">
       </a>
     </div>
  
-    <div class="w3-third w3-container w3-center">
+    <div class="img-col-1">
       <a href="mailto:addarsh.cherokie@gmail.com" target="_blank">
-        <img src="gmail_logo.png" class="w3-round" width="70vw">
+        <img src="gmail_logo.png" class="logos-col-6">
       </a>
     </div>
   </div>
 </section>
+
+</div>
+
+</body>
+</html>
